@@ -1,0 +1,89 @@
+.navbar-brand img{
+    max-height: 70px;
+}
+
+.bg-light{
+    background-color: #ffffff!important;
+}
+
+header .row{
+    align-items: center;
+    min-height: 70vh;
+    background-image: url(../portfolio2/fond.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+}
+
+header .presentation{
+    background-color: rgba(0,0,0,0.5);
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+}
+
+h1{
+    font-size: 1.6em;
+    font-family: 'Dancing Script', cursive;
+}
+
+h2{
+    font-size: 1.1em;
+    font-family: 'Kurale', serif;
+}
+
+header .boutonPC{
+    display:flex;
+    min-height: 70vh;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-bottom: 3em;
+    cursor: pointer;
+}
+
+@media (max-width: 768px)
+{
+    header .boutonPC{
+        display:none;
+        background-color: rgba(0,0,0,0.5);
+
+    }
+}
+
+.parcours{
+    min-height:50vh;
+}
+
+.comp{
+    min-height: 50vh;
+}
+
+.comp .progress{
+    margin-left: 4em;
+    vertical-align: middle;
+}
+
+.comp img{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 0.8em;
+    margin-top: 1em;
+    vertical-align: middle;
+}
+
+.creations{
+    min-height: 50vh;
+}
+
+.recommandationPro{
+    min-height: 80vh;
+}
+
+.recommandationPro .carousel-caption{
+    color:black;
+}
