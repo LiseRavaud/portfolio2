@@ -95,6 +95,7 @@ header .boutonPC{
 /*-------------------- CREATIONS --------------------*/
 .creations{
     min-height: calc(100vh - 50px);
+    
 }
 
 .creations .row{
@@ -169,7 +170,19 @@ footer a{
     font-size: 0.8em;
     font-style: italic;
     min-height:0.1em;
+    text-decoration: none;
 }
+
+.mentionL a{
+    color:white;
+    text-decoration: none;
+}
+
+.mentionL a:hover{
+    color:white;
+    text-decoration: none;
+}
+
 
 /*-------------------- FORMULAIRE RECOMMANDATIONS --------------------*/
 .recom{
@@ -200,4 +213,15 @@ footer a{
 .recom p{
     text-align: center;
     font-style: italic;
+}
+
+/*-------------------- PAGE MENTIONS LEGALES --------------------*/
+#ml{
+    padding-top: 8em;
+    background-color: rgba(158, 147, 135, 0.801);
+}
+
+#ml p{
+    margin-top:-1.5em;
+    margin-bottom: 2em;
 }
