@@ -118,8 +118,9 @@ if (!empty($_POST)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Développeuse web spécialisée en front-end et UX design.">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kurale|Great+Vibes|Parisienne&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kurale|Great+Vibes|Parisienne|Sorts+Mill+Goudy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../portfolio/css/mdb.css">
     <link rel="stylesheet" href="../portfolio/css/index.css">
     <link rel="shortcut icon" href="../portfolio/css/logo.png">
 
@@ -164,16 +165,18 @@ if (!empty($_POST)) {
                     </div>
                     <div class="form-group">
                         <label for="metier">Métier</label>
-                        <input type="text" class="form-control" name="metier" id = "metier" placeholder="Votre métier" maxlength="191" minlength="5" size="30" required>
+                        <input type="text" class="form-control" name="metier" id="metier" placeholder="Votre métier" maxlength="191" minlength="5" size="30" required>
                     </div>
                     <div class="form-group">
                         <label for="entreprise">Entreprise</label>
-                        <input type="text" class="form-control" name="entreprise" id ="entreprise" placeholder="Le nom de votre entreprise" maxlength="191" minlength="2" size="30" required>
+                        <input type="text" class="form-control" name="entreprise" id="entreprise" placeholder="Le nom de votre entreprise" maxlength="191" minlength="2" size="30" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea type="text" class="form-control" name="message" id="message" rows="3" placeholder="Veuillez entrer votre message" maxlength="1000" minlength="10" size="50" required></textarea>
                     </div>
+
+                    <button type="submit" class="btn btn-indigo">Envoyer</button>
 
                     <?php
                     //affiche les éventuelles erreurs de validation
@@ -182,9 +185,13 @@ if (!empty($_POST)) {
                             echo '<div>' . $error . '</div>';
                         }
                     }
-                    ?>
 
-                    <button type="submit" class="btn btn-info">Envoyer</button>
+                    //affiche un message de confirmation si le formulaire est valide
+                    if (!empty($_POST)) {
+                        echo ("Merci de votre message !");
+                    }
+                    ?>
+                    
                 </form>
             </div>
         </div>

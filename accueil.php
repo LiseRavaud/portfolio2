@@ -7,7 +7,7 @@ include('db.php');
 if (!empty($_POST)) {
   // par défaut, on dit que le formulaire est entièrement valide, si erreur cette variable aura pour valeur "false"
   $formIsValid = true;
-  
+
   // on fait un strip_tags pour se protéger des attaques XSS
   $nom = strip_tags($_POST['nom']);
   $prenom = strip_tags($_POST['prenom']);
@@ -15,7 +15,7 @@ if (!empty($_POST)) {
   $sujet = strip_tags($_POST['sujet']);
   $message = strip_tags($_POST['message']);
 
-  //tableau qui stocke nos éventuels messages d'erreur
+  //tableau qui stocke les éventuels messages d'erreur
   $errors = [];
 
   //validation du nom
@@ -28,11 +28,10 @@ if (!empty($_POST)) {
   } elseif (mb_strlen($nom) > 100) {
     $formIsValid = false;
     $errors[] = "Votre nom de famille est trop long.";
-  }
-  elseif (is_numeric($nom)){
+  } elseif (is_numeric($nom)) {
     $formIsValid = false;
-    $errors[]= "Les chiffres ne sont pas autorisés.";
-}
+    $errors[] = "Les chiffres ne sont pas autorisés.";
+  }
 
   //validation du prenom
   if (empty($prenom)) {
@@ -44,11 +43,10 @@ if (!empty($_POST)) {
   } elseif (mb_strlen($prenom) > 100) {
     $formIsValid = false;
     $errors[] = "Votre prénom est trop long.";
-  }
-  elseif (is_numeric($prenom)){
+  } elseif (is_numeric($prenom)) {
     $formIsValid = false;
-    $errors[]= "Les chiffres ne sont pas autorisés.";
-}
+    $errors[] = "Les chiffres ne sont pas autorisés.";
+  }
 
   //validation email
   if (empty($email)) {
@@ -104,6 +102,7 @@ if (!empty($_POST)) {
     ]);
   }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -113,9 +112,10 @@ if (!empty($_POST)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name ="description" content ="Développeuse web spécialisée en front-end et UX design.">
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kurale|Great+Vibes|Parisienne&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="description" content="Développeuse web spécialisée en front-end et UX design.">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kurale|Great+Vibes|Parisienne|Lobster|Sorts+Mill+Goudy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../portfolio/css/mdb.css">
   <link rel="stylesheet" href="../portfolio/css/index.css">
   <link rel="shortcut icon" href="../portfolio/css/logo.png">
 
@@ -166,7 +166,7 @@ if (!empty($_POST)) {
       </div>
 
       <div class="col-12 col-md-6 boutonPC">
-        <a class="btn btn-info" href="formRecommandation.php#formRecom" role="button">Venez donner votre avis</a>
+        <a class="btn btn-indigo" href="formRecommandation.php#formRecom" role="button">Venez donner votre avis</a>
       </div>
     </div>
   </header>
@@ -174,28 +174,69 @@ if (!empty($_POST)) {
   <!-------------------- PARCOURS -------------------->
   <div class="container" id="parComp">
     <div class="row">
-
       <div class="col-12 col-md-6">
         <div class="media">
           <div class="media-body">
             <h4 class="mt-0">Mon parcours</h4>
-            <div class="parcours my-3">
-              <span>2019-2022</span>
-              <h5>Bachelor Développement Web </h5>
-              <p>Campus Academy (IMIE) - Nantes</p>
-              <span>2016-2017</span>
-              <h5>Licence professionnelle "Accompagnement de publics spécifiques"</h5>
-              <p>Antenne universitaire de Beauvais</p>
-              <span>2014-2016</span>
-              <h5>Master de psychologie cognitive et neuropsychologie</h5>
-              <p>Université de Nantes</p>
-              <span>2010-2013</span>
-              <h5>Licence de psychologie</h5>
-              <p>Université de Nantes</p>
-              <span>2009</span>
-              <h5>Baccalauréat STG (spécialité: Informatique)</h5>
-              <p>Lycée Carcouët - Nantes</p>
-            </div>
+            <section class="parcours my-3 borderParc">
+
+              <div class="row">
+                <div class="col-sm-4 imgParcours">
+                  <img src="../portfolio/css/CAMPUS_ACADEMY.png" class="align-self-center" alt="logo Campus Academy">
+                </div>
+                <div class="col-sm-8">
+                  <span>2019-2022</span>
+                  <h5>Bachelor Développement Web </h5>
+                  <p>Campus Academy (IMIE) - Nantes</p>
+                </div>
+              </div>
+
+              <div class="row border1">
+                <div class="col-sm-4 imgParcours">
+                  <img src="../portfolio/css/picardie.png" class="align-self-center" alt="logo Université de Picardie">
+                </div>
+                <div class="col-sm-8">
+                  <span>2016-2017</span>
+                  <h5>Licence professionnelle "Accompagnement de publics spécifiques"</h5>
+                  <p>Antenne universitaire de Beauvais</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-4 imgParcours">
+                  <img src="../portfolio/css/universiteNantes.png" class="align-self-center" alt="logo Université de Nantes">
+                </div>
+                <div class="col-sm-8">
+                  <span>2014-2016</span>
+                  <h5>Master de psychologie cognitive et neuropsychologie</h5>
+                  <p>Université de Nantes</p>
+                </div>
+              </div>
+
+              <div class="row border1">
+                <div class="col-sm-4 imgParcours">
+                  <img src="../portfolio/css/universiteNantes.png" class="align-self-center" alt="logo Université de Nantes">
+                </div>
+                <div class="col-sm-8">
+                  <span>2010-2013</span>
+                  <h5>Licence de psychologie</h5>
+                  <p>Université de Nantes</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-4 imgParcours">
+                  <img src="../portfolio/css/lycee.png" class="align-self-center" alt="logo Lycée Carcouët">
+                </div>
+                <div class="col-sm-8">
+                  <span>2009</span>
+                  <h5>Baccalauréat STG (spécialité: Informatique)</h5>
+                  <p>Lycée Carcouët - Nantes</p>
+                </div>
+              </div>
+
+
+            </section>
           </div>
         </div>
       </div>
@@ -205,20 +246,44 @@ if (!empty($_POST)) {
         <div class="media">
           <div class="media-body">
             <h4 class="mt-0">Mes compétences</h4>
-            <div class="container" id="langage">
-              <h5>Langages</h5>
-              <p>HTML, CSS, JavaScript, PHP, SQL</p>
-            </div>
 
-            <div class="container" id="framework">
-              <h5>Frameworks</h5>
-              <p>Bootstrap</p>
-            </div>
+            <section class="border">
+              <h6><img src="../portfolio/css/computer.png" class="align-self-center mr-2" alt="logo code">Compétences techniques</h6>
+              <div class="alignImg">
+                <img src="../portfolio/css/html5.png" class="align-self-center" alt="logo html5">
+                <img src="../portfolio/css/css3.png" class="align-self-center" alt="logo css3">
+                <img src="../portfolio/css/js.png" class="align-self-center" alt="logo javascript">
+                <img src="../portfolio/css/php.png" class="align-self-center" alt="logo php">
+                <img src="../portfolio/css/sql.png" class="align-self-center" alt="logo sql">
+              </div>
+            </section>
 
-            <div class="container" id="framework">
-              <h5>En cours d'acquisition</h5>
-              <p>Python, React, Jquery</p>
-            </div>
+            <section class="border">
+              <h6><img src="../portfolio/css/teamwork.png" class="align-self-center mr-2" alt="logo savoir-être">Savoir-être</h6>
+              <div class="row">
+                <div>
+                  <p>Ecoute active</p>
+                  <p>Empathie</p>
+                  <p>Gestion du stress</p>
+                  <p>Réactivité</p>
+                </div>
+                <div>
+                  <p>Curiosité</p>
+                  <p>Gestion des conflits</p>
+                  <p>Travail en équipe</p>
+                </div>
+              </div>
+
+            </section>
+
+            <section class="border">
+              <h6><img src="../portfolio/css/psychology-symbol.png" class="align-self-center mr-2" alt="logo psy">Compétences en psychologie</h6>
+              <div class="imgBrain"><img src="../portfolio/css/intelligence.png" class="align-self-center mr-2" alt="logo étude du cerveau">Fonctionnement du cerveau, sa structure anatomique, et ses dysfonctionnements</div>
+              <div><img src="../portfolio/css/sd-card.png" class="align-self-center mr-2" alt="logo mémoire">Connaissances des différentes mémoires, leur fonctionnement et leurs dysfonctionnements</div>
+              <div class="imgSocial"><img src="../portfolio/css/crm.png" class="align-self-center mr-2" alt="logo social">Fonctionnement d'un groupe et ses interactions sociales</div>
+              <div><img src="../portfolio/css/handicap.png" class="align-self-center mr-2" alt="logo social">Connaissances des différents types de handicaps et leurs troubles associés</div>
+            </section>
+
           </div>
         </div>
       </div>
@@ -232,7 +297,83 @@ if (!empty($_POST)) {
       <div class="col-12">
         <div class="creations">
           <h4>Créations</h4>
-          <p>Prochainement sur vos écrans !</p>
+          <ul class="nav nav-pills mb-4 mt-4 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="pills-tout-tab" data-toggle="pill" href="#pills-tout" role="tab" aria-controls="pills-tout" aria-selected="true">Tout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-creations-personnelles-tab" data-toggle="pill" href="#pills-creations-personnelles" role="tab" aria-controls="pills-creations-personnelles" aria-selected="false">Créations personnelles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-creations-professionnelles-tab" data-toggle="pill" href="#pills-creations-professionnelles" role="tab" aria-controls="pills-creations-professionnelles" aria-selected="false">Créations professionnelles</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-tout" role="tabpanel" aria-labelledby="pills-tout-tab">
+              <div class="py-5 service-24">
+                <div class="container">
+                  <div class="row wrap-service-24">
+
+                    <div class="col-lg-3 col-md-6">
+                      <div class="card rounded card-shadow border-0 mb-4">
+                        <a href="javascript:void(0)" class="card-hover py-4 text-center d-block rounded">
+                          <span class="bg-success-grediant">P</span>
+                          <h6 class="ser-title">Portfolio (en cours)</h6>
+                        </a>
+                      </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                      <div class="card card-shadow border-0 mb-4">
+                        <a href="javascript:void(0)" class="card-hover py-4 text-center d-block rounded">
+                          <span class="bg-success-grediant">DVD</span>
+                          <h6 class="ser-title">Bibliothèque de mes DVD (en cours)</h6>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-pane fade" id="pills-creations-personnelles" role="tabpanel" aria-labelledby="pills-creations-personnelles-tab">
+              <div class="py-5 service-24">
+                <div class="container">
+                  <div class="row wrap-service-24">
+                    
+                    <div class="col-lg-3 col-md-6">
+                      <div class="card rounded card-shadow border-0 mb-4">
+                        <a href="javascript:void(0)" class="card-hover py-4 text-center d-block rounded">
+                          <span class="bg-success-grediant">P</span>
+                          <h6 class="ser-title">Portfolio (en cours)</h6>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="tab-pane fade" id="pills-creations-professionnelles" role="tabpanel" aria-labelledby="pills-creations-professionnelles-tab">
+              <div class="py-5 service-24">
+                <div class="container">
+                  <div class="row wrap-service-24">
+
+                    <div class="col-lg-3 col-md-6">
+                      <div class="card rounded card-shadow border-0 mb-4">
+                        <a href="javascript:void(0)" class="card-hover py-4 text-center d-block rounded">
+                          <span class="bg-success-grediant">DVD</span>
+                          <h6 class="ser-title">Bibliothèque de mes DVD (en cours)</h6>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
@@ -243,7 +384,7 @@ if (!empty($_POST)) {
     <div class="row">
       <div class="col-12">
         <div class="recommandationPro">
-          <h4>Recommandations professionnelles</h4>
+          <h4>Recommandations professionnelles <img src="../portfolio/css/like.png" class="align-self-center" alt="logo like"></h4>
 
           <div class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -259,21 +400,7 @@ if (!empty($_POST)) {
             </div>
           </div>
 
-          <nav aria-label="...">
-            <ul class="pagination">
-              <li class="page-item ">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="false">Précédent</a>
-              </li>
-              <li class="page-item active"><a class="page-link" href="accueil.php#recommandations">1</a></li>
-              <li class="page-item" aria-current="page">
-                <a class="page-link" href="accueil.php#recommandations">2 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="page-item"><a class="page-link" href="accueil.php#recommandations">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="accueil.php#recommandations">Suivant</a>
-              </li>
-            </ul>
-          </nav>
+          
 
         </div>
       </div>
@@ -309,6 +436,8 @@ if (!empty($_POST)) {
             <textarea type="text" class="form-control" name="message" id="message" rows="3" placeholder="Veuillez entrer votre message" maxlength="1000" minlength="15" size="50" required></textarea>
           </div>
 
+          <button type="submit" class="btn btn-indigo">Envoyer</button>
+
           <?php
           //affiche les éventuelles erreurs de validation
           if (!empty($errors)) {
@@ -316,9 +445,13 @@ if (!empty($_POST)) {
               echo '<div>' . $error . '</div>';
             }
           }
+
+          //affiche un message de confirmation si le formulaire est valide
+          if (!empty($_POST)) {
+            echo ("Merci de votre message !");
+          }
           ?>
 
-          <button type="submit" class="btn btn-info">Envoyer</button>
         </form>
 
       </div>
@@ -350,10 +483,9 @@ if (!empty($_POST)) {
   </div>
 
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="
-  sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
   <script>
     $(function() {

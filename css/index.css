@@ -1,6 +1,7 @@
 h4{
     font-family: 'Great Vibes', cursive;
     font-size: 2.2em;
+    text-align: center;
 }
 
 /*-------------------- MENU DE NAVIGATION --------------------*/
@@ -52,9 +53,16 @@ header .boutonPC{
     min-height: 70vh;
     align-items: flex-end;
     justify-content: flex-end;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     cursor: pointer;
 }
+
+.btn-indigo{
+    border-radius: 2em;
+    padding:0.7em;
+    font-variant-caps: small-caps;
+}
+
 
 @media (max-width: 768px)
 {
@@ -68,21 +76,42 @@ header .boutonPC{
 /*-------------------- PARCOURS --------------------*/
 .parcours{
     min-height:calc(100vh - 40vh);
-    
 }
 
 .parcours span{
-    font-style: bold;
+    font-style: italic;
+    font-size: 0.9em;
 }
 
 .parcours h5{
-    color:rgb(0, 110, 255);
-    font-family: 'Kurale', serif;
+    color:rgb(15, 69, 141);
+    font-size: 1.1em;
+    font-family: 'Lobster', cursive;
 }
 
 .parcours p{
     font-style: italic;
     text-align: left;
+    font-family: 'Sorts Mill Goudy', serif;
+}
+
+.imgParcours{
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding:10px;
+}
+
+.borderParc{
+    
+    border-radius: 2em;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: rgba(240, 255, 255, 0.404);
+}
+
+.border1{
+    background-color: #D8E6E6;
 }
 
 /*-------------------- COMPETENCES --------------------*/
@@ -92,24 +121,53 @@ header .boutonPC{
     padding-bottom:5em;
 }
 
-.comp h5{
-    color:rgb(66, 133, 221);
-    font-family: 'Kurale', serif;
+.comp h6{
+    text-align: center;
+    font-family: 'Lobster', cursive;
 }
 
-.comp p{
-    text-align: left;
+.border{
+    border-radius: 2em;
+    padding: 20px;
+    margin-top: 20px;
+    background-color:rgba(240, 255, 255, 0.404);
+    font-family: 'Sorts Mill Goudy', serif;
+}
+
+.alignImg{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.comp .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: 'Sorts Mill Goudy', serif;
+}
+
+.imgBrain{
+    margin-bottom: 1em;
+    margin-top: 1em;
+
+}
+
+.imgSocial{
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 /*-------------------- CREATIONS --------------------*/
 #creations{
     min-height: calc(100vh - 50px);
     overflow: hidden;
-    background-image: url(../css/create.webp);
+    background-color: #0e3381;
+    background-image: url(../css/photo-1567567314180-d990c487e23a.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color:white;
+    mask-mode: luminance 20%;
 }
 
 .creations .row{
@@ -118,8 +176,102 @@ header .boutonPC{
     
 }
 
-.creations h4,p{
+.creations h4 p{
     text-align: center;
+}
+
+.creations a {
+    color:rgb(255, 255, 255);
+}
+
+.creations a:hover{
+    color:rgb(255, 255, 255);
+}
+
+#creations ul{
+    font-variant-caps: all-petite-caps;
+}
+
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+.service-24 {
+    font-family: "Montserrat", sans-serif;
+	color: #8d97ad;
+    font-weight: 300;
+}
+
+.service-24 h1, .service-24 h2, .service-24 h3, .service-24 h4, .service-24 h5, .service-24 h6 {
+    color: #3e4555;
+}
+
+.service-24 .card.card-shadow {
+    -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+}
+
+.service-24 a {
+	text-decoration: none;
+}
+
+.service-24 .card-hover:hover {
+	background: #2cdd9b;
+    background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
+    background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+}
+
+.service-24 .card-hover:hover .bg-success-grediant {
+	color: #ffffff;
+    text-fill-color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+}
+
+.service-24 .card-hover:hover .ser-title {
+	color: #ffffff;
+}
+
+.service-24 .bg-success-grediant {
+		background: #2cdd9b;
+    background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
+    background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
+    background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    font-size: 50px;
+}
+
+.service-24 .wrap-service-24 .card {
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+    -webkit-transition: 0.3s ease-out;
+}
+
+.service-24 .wrap-service-24 .card:hover {
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+}
+
+.service-24 .btn-outline-success {
+		color: #2cdd9b !important;
+    background-color: transparent;
+    border-color: #2cdd9b;
+}
+
+.service-24 .btn-outline-success:hover {
+		background: #2cdd9b;
+    border-color: #2cdd9b;
+    color: #ffffff !important;
+}
+
+.service-24 .btn-md {
+    padding: 15px 45px;
+    font-size: 16px;
 }
 
 /*-------------------- RECOMMANDATIONS --------------------*/
@@ -259,6 +411,7 @@ footer a{
 .recom p{
     text-align: center;
     font-style: italic;
+    font-family: 'Sorts Mill Goudy', serif;
 }
 
 /*-------------------- PAGE MENTIONS LEGALES --------------------*/
@@ -270,4 +423,5 @@ footer a{
 #ml p{
     margin-top:-1.5em;
     margin-bottom: 2em;
+    font-family: 'Sorts Mill Goudy', serif;
 }
