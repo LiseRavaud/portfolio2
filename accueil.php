@@ -3,6 +3,9 @@
 //crée la variable $pdo pour accéder à la bdd
 include('db.php');
 
+//pour date en français
+date_default_timezone_set('Europe/Paris');
+
 //on récupère les données du formulaire
 if (!empty($_POST)) {
   // par défaut, on dit que le formulaire est entièrement valide, si erreur cette variable aura pour valeur "false"
@@ -103,6 +106,17 @@ if (!empty($_POST)) {
   }
 }
 
+//afficher les recommandations reçues
+$sql = "SELECT nom, prenom, metier, entreprise, message, DAY(date_created) AS jour, MONTH(date_created) AS mois, YEAR(date_created) as annee
+      FROM formrecom
+      ORDER BY date_created DESC
+      LIMIT 4";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute();
+
+$messages = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -112,8 +126,8 @@ if (!empty($_POST)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="Développeuse web spécialisée en front-end et UX design.">
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kurale|Great+Vibes|Parisienne|Lobster|Sorts+Mill+Goudy&display=swap" rel="stylesheet">
+  <meta name="description" content="Développeuse web front-end et back-end.">
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kurale|Great+Vibes|Parisienne|Lobster|Sorts+Mill+Goudy|EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../portfolio/css/mdb.css">
   <link rel="stylesheet" href="../portfolio/css/index.css">
@@ -126,7 +140,7 @@ if (!empty($_POST)) {
 
   <!-------------------- MENU DE NAVIGATION -------------------->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="#haut"><img src="../portfolio/css/logo.png" alt="logo temporaire du portfolio">Lise Ravaud</a>
+    <a class="navbar-brand" href="#haut">Lise Ravaud | Développeuse Web</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -157,24 +171,22 @@ if (!empty($_POST)) {
 
     <div class="row">
 
-      <div class="col-12 col-md-6 presentation">
+      <div class="col-12 col-md-12 presentation justify-content-center">
         <div>
-          <h1>Bonjour et bienvenue !
-            <h2>Je suis étudiante en Développement Web à Campus Academy, passionnée par le front-end
-              et intéressée par le UX/UI design.</h2>
+          <h1>Bonjour et bienvenue !</h1>
+            <h2>Je suis étudiante en Développement Web à Campus Academy.</br>
+            Après avoir participé à différents projets web, je me passionne par le front-end et suis très intéressée pour progresser en UX/UI design.</br>
+          Je renoue avec ma créativité, je m'amuse et je m'épanouis dans cette formation et à l'idée d'exercer ce métier.</h2>
         </div>
       </div>
 
-      <div class="col-12 col-md-6 boutonPC">
-        <a class="btn btn-indigo" href="formRecommandation.php#formRecom" role="button">Venez donner votre avis</a>
-      </div>
     </div>
   </header>
 
   <!-------------------- PARCOURS -------------------->
   <div class="container" id="parComp">
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 mt-3">
         <div class="media">
           <div class="media-body">
             <h4 class="mt-0">Mon parcours</h4>
@@ -242,7 +254,7 @@ if (!empty($_POST)) {
       </div>
 
       <!-------------------- COMPETENCES -------------------->
-      <div class="col-12 col-md-6 comp">
+      <div class="col-12 col-md-6 comp mt-3">
         <div class="media">
           <div class="media-body">
             <h4 class="mt-0">Mes compétences</h4>
@@ -295,7 +307,7 @@ if (!empty($_POST)) {
   <div class="container" id="creations">
     <div class="row">
       <div class="col-12">
-        <div class="creations">
+        <div class="creations mask">
           <h4>Créations</h4>
           <ul class="nav nav-pills mb-4 mt-4 justify-content-center" id="pills-tab" role="tablist">
             <li class="nav-item">
@@ -322,11 +334,11 @@ if (!empty($_POST)) {
                         </a>
                       </div>
                     </div>
-                    
+
                     <div class="col-lg-3 col-md-6">
                       <div class="card card-shadow border-0 mb-4">
                         <a href="javascript:void(0)" class="card-hover py-4 text-center d-block rounded">
-                          <span class="bg-success-grediant">DVD</span>
+                          <span class="bg-success-grediant">B</span>
                           <h6 class="ser-title">Bibliothèque de mes DVD (en cours)</h6>
                         </a>
                       </div>
@@ -340,12 +352,12 @@ if (!empty($_POST)) {
               <div class="py-5 service-24">
                 <div class="container">
                   <div class="row wrap-service-24">
-                    
+
                     <div class="col-lg-3 col-md-6">
                       <div class="card rounded card-shadow border-0 mb-4">
                         <a href="javascript:void(0)" class="card-hover py-4 text-center d-block rounded">
-                          <span class="bg-success-grediant">P</span>
-                          <h6 class="ser-title">Portfolio (en cours)</h6>
+                          <span class="bg-success-grediant">B</span>
+                          <h6 class="ser-title">Création "bibliothèque" de mes DVD</h6>
                         </a>
                       </div>
                     </div>
@@ -363,8 +375,8 @@ if (!empty($_POST)) {
                     <div class="col-lg-3 col-md-6">
                       <div class="card rounded card-shadow border-0 mb-4">
                         <a href="javascript:void(0)" class="card-hover py-4 text-center d-block rounded">
-                          <span class="bg-success-grediant">DVD</span>
-                          <h6 class="ser-title">Bibliothèque de mes DVD (en cours)</h6>
+                          <span class="bg-success-grediant">P</span>
+                          <h6 class="ser-title">Portfolio (en cours)</h6>
                         </a>
                       </div>
                     </div>
@@ -386,21 +398,28 @@ if (!empty($_POST)) {
         <div class="recommandationPro">
           <h4>Recommandations professionnelles <img src="../portfolio/css/like.png" class="align-self-center" alt="logo like"></h4>
 
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h2 class="display-4">Recommandation de ..., *métier* à ...</h2>
-              <p class="lead">Super travail, bravo ! :)</p>
+          <div class="row">
+            <div class="affichageMessage col-lg-6 col-md-9 mt-5">
+              
+              <?php
+              foreach ($messages as $message) {
+                echo '<article>';
+                echo '<u>' .'Le ' .$message['jour'] . '/' . $message['mois'] . '/' . $message['annee'] . '</u>' .'<br>';
+                echo $message['prenom'] . ' ' . $message['nom'] . '<br>' . $message['metier'] . " de l'entreprise " . $message['entreprise'] . '<br>' . '"' . $message['message'] . '"' . '<hr>';
+                echo '</article>';
+              }
+              ?>
+
             </div>
           </div>
 
-          <div class="jumbotron jumbotron-fluid">
-            <div class="container">
-              <h2 class="display-4">Recommandation de ..., *métier* à ...</h2>
-              <p class="lead">Bonne maîtrise de HTML5 et des connaissances qui évolue dans le bon sens en CSS3 ainsi qu'en PHP. Pensez à utiliser davantage de frameworks.</p>
-            </div>
+          <div class="row">
+          <div class="col-12 col-lg-7 col-md-6 boutonPC">
+            <a class="btn btn-indigo" href="formRecommandation.php#formRecom" role="button">Venez donner votre avis</a>
           </div>
 
-          
+          </div>
+
 
         </div>
       </div>
@@ -447,7 +466,7 @@ if (!empty($_POST)) {
           }
 
           //affiche un message de confirmation si le formulaire est valide
-          if (!empty($_POST)) {
+          if (!empty($_POST) && empty($errors)) {
             echo ("Merci de votre message !");
           }
           ?>
@@ -494,7 +513,7 @@ if (!empty($_POST)) {
         if (the_id === '#') {
           return;
         }
-        var positionCible = $(the_id).offset().top - 92
+        var positionCible = $(the_id).offset().top - 55
         $('html,body').animate({
           scrollTop: positionCible
         }, 'slow');

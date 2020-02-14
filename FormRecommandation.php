@@ -21,13 +21,10 @@ if (!empty($_POST)) {
     //validation du nom
     if (empty($nom)) {
         $formIsValid = false;
-        $errors[] = "Veuillez renseigner votre nom de famille.";
-    } elseif (mb_strlen($nom) <= 4) {
+        $errors[] = "Veuillez renseigner l'initiale de votre nom.";
+    } elseif (mb_strlen($nom) > 2) {
         $formIsValid = false;
-        $errors[] = "Votre nom de famille est trop court.";
-    } elseif (mb_strlen($nom) > 100) {
-        $formIsValid = false;
-        $errors[] = "Votre nom de famille est trop long.";
+        $errors[] = "Seulement l'initiale est demandée.";
     } elseif (is_numeric($nom)) {
         $formIsValid = false;
         $errors[] = "Les chiffres ne sont pas autorisés.";
@@ -131,7 +128,7 @@ if (!empty($_POST)) {
 
     <!-------------------- MENU DE NAVIGATION -------------------->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="accueil.php#haut"><img src="../portfolio/css/logo.png" alt="logo temporaire du portfolio">Lise Ravaud</a>
+        <a class="navbar-brand" href="accueil.php#haut">Lise Ravaud | Développeuse Web</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -156,8 +153,8 @@ if (!empty($_POST)) {
 
                 <form method="post">
                     <div class="form-group">
-                        <label for="nom">Nom</label>
-                        <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom" maxlength="100" minlength="5" size="30" required>
+                        <label for="nom">Initiale de votre nom</label>
+                        <input type="text" class="form-control" name="nom" id="nom" placeholder="Initiale" maxlength="1" minlength="1" size="30" required>
                     </div>
                     <div class="form-group">
                         <label for="prenom">Prénom</label>
@@ -187,7 +184,7 @@ if (!empty($_POST)) {
                     }
 
                     //affiche un message de confirmation si le formulaire est valide
-                    if (!empty($_POST)) {
+                    if (!empty($_POST) && empty($errors)) {
                         echo ("Merci de votre message !");
                     }
                     ?>

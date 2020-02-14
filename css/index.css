@@ -7,18 +7,17 @@ h4{
 /*-------------------- MENU DE NAVIGATION --------------------*/
 .navbar-brand{
     font-family: 'Parisienne', cursive;
-    font-size: 1.5em;
 }
 
 .navbar-brand img{
     max-height: 70px;
 }
 
-/*-------------------- HEADER --------------------*/
 .bg-light{
-    background-color: #ffffff!important;
+    background-color:rgb(255, 255, 255)!important;
 }
 
+/*-------------------- HEADER --------------------*/
 header .row{
     align-items: center;
     min-height: 70vh;
@@ -26,12 +25,11 @@ header .row{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+    
 }
 
 header .presentation{
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.4);
     min-height: 70vh;
     display: flex;
     align-items: center;
@@ -41,36 +39,14 @@ header .presentation{
 h1{
     font-size: 1.6em;
     font-family: 'Dancing Script', cursive;
+    text-align: center;
+    padding-bottom: 1em;
 }
 
 h2{
     font-size: 1.1em;
     font-family: 'Kurale', serif;
-}
-
-header .boutonPC{
-    display:flex;
-    min-height: 70vh;
-    align-items: flex-end;
-    justify-content: flex-end;
-    margin-bottom: 2em;
-    cursor: pointer;
-}
-
-.btn-indigo{
-    border-radius: 2em;
-    padding:0.7em;
-    font-variant-caps: small-caps;
-}
-
-
-@media (max-width: 768px)
-{
-    header .boutonPC{
-        display:none;
-        background-color: rgba(0,0,0,0.5);
-
-    }
+    text-align: center;
 }
 
 /*-------------------- PARCOURS --------------------*/
@@ -167,7 +143,6 @@ header .boutonPC{
     background-repeat: no-repeat;
     background-attachment: fixed;
     color:white;
-    mask-mode: luminance 20%;
 }
 
 .creations .row{
@@ -192,13 +167,6 @@ header .boutonPC{
     font-variant-caps: all-petite-caps;
 }
 
-@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
-.service-24 {
-    font-family: "Montserrat", sans-serif;
-	color: #8d97ad;
-    font-weight: 300;
-}
-
 .service-24 h1, .service-24 h2, .service-24 h3, .service-24 h4, .service-24 h5, .service-24 h6 {
     color: #3e4555;
 }
@@ -215,7 +183,6 @@ header .boutonPC{
 .service-24 .card-hover:hover {
 	background: #2cdd9b;
     background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
     background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
     background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
     background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
@@ -223,7 +190,6 @@ header .boutonPC{
 
 .service-24 .card-hover:hover .bg-success-grediant {
 	color: #ffffff;
-    text-fill-color: #ffffff;
     -webkit-text-fill-color: #ffffff;
 }
 
@@ -234,14 +200,12 @@ header .boutonPC{
 .service-24 .bg-success-grediant {
 		background: #2cdd9b;
     background: -webkit-linear-gradient(legacy-direction(to right), #2cdd9b 0%, #1dc8cc 100%);
-    background: -webkit-gradient(linear, left top, right top, from(#2cdd9b), to(#1dc8cc));
     background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
     background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
     background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
     font-size: 50px;
 }
 
@@ -280,10 +244,6 @@ header .boutonPC{
     margin-top: 1em;
 }
 
-.recommandationPro .carousel-caption{
-    color:black;
-}
-
 .recommandationPro .row{
     align-items: center;
     justify-content: space-around;
@@ -293,14 +253,34 @@ header .boutonPC{
     text-align: center;
 }
 
-.jumbotron{
-    text-align: center;
+.affichageMessage{
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05em;
 }
 
-.pagination{
-    align-items: right;
+.boutonPC{
+    display:flex;
+    min-height: 10vh;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1em;
+    cursor: pointer;
 }
 
+.btn-indigo{
+    border-radius: 2em;
+    padding:0.7em;
+}
+
+
+@media (max-width: 768px)
+{
+    header .boutonPC{
+        display:none;
+        background-color: rgba(0,0,0,0.5);
+
+    }
+}
 
 /*------------------------ CONTACT ----------------------*/
 #contact{
@@ -326,19 +306,6 @@ header .boutonPC{
 #contact h4{
     text-align: center;
     padding-bottom: 1em;
-}
-
-.redirectionContact{
-    min-height: calc(100vh - 90px);
-    margin-top: 5em;
-    text-align: center;
-    background-image: url(../css/photo-1549032305-e816fabf0dd2.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color:white;
-    
-    
 }
 
 /*-------------------- FOOTER --------------------*/
@@ -423,5 +390,5 @@ footer a{
 #ml p{
     margin-top:-1.5em;
     margin-bottom: 2em;
-    font-family: 'Sorts Mill Goudy', serif;
+    font-family: 'Kurale', serif;
 }
