@@ -3,9 +3,6 @@
 //crée la variable $pdo pour accéder à la bdd
 include('db.php');
 
-//pour date en français
-date_default_timezone_set('Europe/Paris');
-
 //on récupère les données du formulaire
 if (!empty($_POST)) {
   // par défaut, on dit que le formulaire est entièrement valide, si erreur cette variable aura pour valeur "false"
@@ -131,7 +128,7 @@ $messages = $stmt->fetchAll();
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../portfolio/css/mdb.css">
   <link rel="stylesheet" href="../portfolio/css/index.css">
-  <link rel="shortcut icon" href="../portfolio/css/logo.png">
+  <link rel="shortcut icon" href="../portfolio/css/lotus_flower.webp">
 
   <title>Lise Ravaud | Développeuse web</title>
 </head>
@@ -306,8 +303,8 @@ $messages = $stmt->fetchAll();
   <!-------------------- CREATIONS -------------------->
   <div class="container" id="creations">
     <div class="row">
-      <div class="col-12">
-        <div class="creations mask">
+      <div class="col-12 mask">
+        <div class="creations">
           <h4>Créations</h4>
           <ul class="nav nav-pills mb-4 mt-4 justify-content-center" id="pills-tab" role="tablist">
             <li class="nav-item">
@@ -415,7 +412,7 @@ $messages = $stmt->fetchAll();
 
           <div class="row">
           <div class="col-12 col-lg-7 col-md-6 boutonPC">
-            <a class="btn btn-indigo" href="formRecommandation.php#formRecom" role="button">Venez donner votre avis</a>
+            <a class="btn btn-indigo" href="formRecommandation.php#formRecom" role="button">J'écris une recommandation</a>
           </div>
 
           </div>
@@ -432,7 +429,7 @@ $messages = $stmt->fetchAll();
       <div class="col-12 offset-md-1 col-md-6 formContact">
         <h4>Contact</h4>
 
-        <form method="post" action="accueil.php#contact">
+        <form method="post" action="mail.php">
           <div class="form-group">
             <label for="nom">Nom</label>
             <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom" maxlength="100" minlength="3" size="30" required>
@@ -465,10 +462,6 @@ $messages = $stmt->fetchAll();
             }
           }
 
-          //affiche un message de confirmation si le formulaire est valide
-          if (!empty($_POST) && empty($errors)) {
-            echo ("Merci de votre message !");
-          }
           ?>
 
         </form>

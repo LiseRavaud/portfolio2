@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../portfolio/css/mdb.css">
     <link rel="stylesheet" href="../portfolio/css/index.css">
-    <link rel="shortcut icon" href="../portfolio/css/logo.png">
+    <link rel="shortcut icon" href="../portfolio/css/lotus_flower.webp">
 
     <title>Mentions Légales</title>
 </head>
