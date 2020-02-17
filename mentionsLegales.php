@@ -44,7 +44,7 @@
     Lise Ravaud - Etudiante en Développement Web - Nantes (Loire-Atlantique)</p>
 
     <p>Hébergeur :<br>
-    A déterminer</p>
+    OVH</p>
 
     <h4>Conditions générales d’utilisation du site</h4>
     <p>L’utilisation du site www.lise-ravaud.fr implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites.
