@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Parisienne|Sorts+Mill+Goudy&display=swap&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../portfolio/css/mdb.css">
-    <link rel="stylesheet" href="../portfolio/css/index.css">
-    <link rel="shortcut icon" href="../portfolio/css/lotus_flower.webp">
+    <link rel="stylesheet" href="./css/mdb.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="./css/lotus_flower.webp">
 
     <title>Mentions Légales</title>
 </head>
@@ -17,7 +17,7 @@
 
 <!-------------------- MENU DE NAVIGATION -------------------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="index.html#haut">Lise Ravaud | Développeuse Web</a>
+    <a class="navbar-brand" href="accueil.php#haut">Lise Ravaud | Développeuse Web</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

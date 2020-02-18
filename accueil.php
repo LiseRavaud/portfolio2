@@ -15,6 +15,27 @@ if (!empty($_POST)) {
   $sujet = strip_tags($_POST['sujet']);
   $message = strip_tags($_POST['message']);
 
+  // Préparation du mail
+  $EmailTo = "xxxxx.xxxx@xxxx.com";
+  $Subject = "PORTFOLIO CONTACT : " . $sujet;
+  $header = "From:" . $email . "\r\n";
+  $header .= 'X-Mailer: PHP/' . phpversion();
+  $Body = "Nom : ";
+  $Body .= $nom;
+  $Body .= "\n";
+  $Body .= "Prénom : ";
+  $Body .= $prenom;
+  $Body .= "\n";
+  $Body .= "E-mail : ";
+  $Body .= $email;
+  $Body .= "\n";
+  $Body .= "Sujet : ";
+  $Body .= $sujet;
+  $Body .= "\n";
+  $Body .= "Message : ";
+  $Body .= $message;
+  $Body .= "\n";
+
   //tableau qui stocke les éventuels messages d'erreur
   $errors = [];
 
@@ -85,9 +106,9 @@ if (!empty($_POST)) {
   if ($formIsValid == true) {
     //on écrit tout d'abord notre requête SQL
     $sql = "INSERT INTO formcontact
-                (nom, prenom, email, sujet, message, date_created)
-                VALUES
-                (:nom, :prenom, :email, :sujet, :message, NOW())";
+              (nom, prenom, email, sujet, message, date_created)
+              VALUES
+              (:nom, :prenom, :email, :sujet, :message, NOW())";
 
     //envoie une requête au serveur
     $stmt = $pdo->prepare($sql);
@@ -100,7 +121,9 @@ if (!empty($_POST)) {
       ":sujet" => $sujet,
       ":message" => $message,
     ]);
+    $success = mail($EmailTo, $Subject, $Body);
   }
+
 }
 
 //afficher les recommandations reçues
@@ -126,14 +149,14 @@ $messages = $stmt->fetchAll();
   <meta name="description" content="Développeuse web front-end et back-end.">
   <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kurale|Great+Vibes|Parisienne|Lobster|Sorts+Mill+Goudy|EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../portfolio/css/mdb.css">
-  <link rel="stylesheet" href="../portfolio/css/index.css">
-  <link rel="shortcut icon" href="../portfolio/css/lotus_flower.webp">
+  <link rel="stylesheet" href="./css/mdb.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="shortcut icon" href="./css/lotus_flower.webp">
 
   <title>Lise Ravaud | Développeuse web</title>
 </head>
 
-<body id="haut">
+<body>
 
   <!-------------------- MENU DE NAVIGATION -------------------->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -168,11 +191,11 @@ $messages = $stmt->fetchAll();
 
     <div class="row">
 
-      <div class="col-12 col-md-12 presentation justify-content-center">
+      <div class="col-12 presentation justify-content-center">
         <div>
           <h1>Bonjour et bienvenue !</h1>
-            <h2>Je suis étudiante en Développement Web à Campus Academy.</br>
-            Après avoir participé à différents projets web, je me passionne par le front-end et suis très intéressée pour progresser en UX/UI design.</br>
+            <h2>Je suis étudiante en Développement Web à Campus Academy.<br>
+            Après avoir participé à différents projets web, je me passionne par le front-end et suis très intéressée pour progresser en UX/UI design.<br>
           Je renoue avec ma créativité, je m'amuse et je m'épanouis dans cette formation et à l'idée d'exercer ce métier.</h2>
         </div>
       </div>
@@ -191,7 +214,7 @@ $messages = $stmt->fetchAll();
 
               <div class="row">
                 <div class="col-sm-4 imgParcours">
-                  <img src="../portfolio/css/CAMPUS_ACADEMY.png" class="align-self-center" alt="logo Campus Academy">
+                  <img src="./css/CAMPUS_ACADEMY.png" class="align-self-center" alt="logo Campus Academy">
                 </div>
                 <div class="col-sm-8">
                   <span>2019-2022</span>
@@ -202,7 +225,7 @@ $messages = $stmt->fetchAll();
 
               <div class="row border1">
                 <div class="col-sm-4 imgParcours">
-                  <img src="../portfolio/css/picardie.png" class="align-self-center" alt="logo Université de Picardie">
+                  <img src="./css/picardie.png" class="align-self-center" alt="logo Université de Picardie">
                 </div>
                 <div class="col-sm-8">
                   <span>2016-2017</span>
@@ -213,7 +236,7 @@ $messages = $stmt->fetchAll();
 
               <div class="row">
                 <div class="col-sm-4 imgParcours">
-                  <img src="../portfolio/css/universiteNantes.png" class="align-self-center" alt="logo Université de Nantes">
+                  <img src="./css/universiteNantes.png" class="align-self-center" alt="logo Université de Nantes">
                 </div>
                 <div class="col-sm-8">
                   <span>2014-2016</span>
@@ -224,7 +247,7 @@ $messages = $stmt->fetchAll();
 
               <div class="row border1">
                 <div class="col-sm-4 imgParcours">
-                  <img src="../portfolio/css/universiteNantes.png" class="align-self-center" alt="logo Université de Nantes">
+                  <img src="./css/universiteNantes.png" class="align-self-center" alt="logo Université de Nantes">
                 </div>
                 <div class="col-sm-8">
                   <span>2010-2013</span>
@@ -235,7 +258,7 @@ $messages = $stmt->fetchAll();
 
               <div class="row">
                 <div class="col-sm-4 imgParcours">
-                  <img src="../portfolio/css/lycee.png" class="align-self-center" alt="logo Lycée Carcouët">
+                  <img src="./css/lycee.png" class="align-self-center" alt="logo Lycée Carcouët">
                 </div>
                 <div class="col-sm-8">
                   <span>2009</span>
@@ -257,18 +280,18 @@ $messages = $stmt->fetchAll();
             <h4 class="mt-0">Mes compétences</h4>
 
             <section class="border">
-              <h6><img src="../portfolio/css/computer.png" class="align-self-center mr-2" alt="logo code">Compétences techniques</h6>
+              <h6><img src="./css/computer.png" class="align-self-center mr-2" alt="logo code">Compétences techniques</h6>
               <div class="alignImg">
-                <img src="../portfolio/css/html5.png" class="align-self-center" alt="logo html5">
-                <img src="../portfolio/css/css3.png" class="align-self-center" alt="logo css3">
-                <img src="../portfolio/css/js.png" class="align-self-center" alt="logo javascript">
-                <img src="../portfolio/css/php.png" class="align-self-center" alt="logo php">
-                <img src="../portfolio/css/sql.png" class="align-self-center" alt="logo sql">
+                <img src="./css/html5.png" class="align-self-center" alt="logo html5">
+                <img src="./css/css3.png" class="align-self-center" alt="logo css3">
+                <img src="./css/js.png" class="align-self-center" alt="logo javascript">
+                <img src="./css/php.png" class="align-self-center" alt="logo php">
+                <img src="./css/sql.png" class="align-self-center" alt="logo sql">
               </div>
             </section>
 
             <section class="border">
-              <h6><img src="../portfolio/css/teamwork.png" class="align-self-center mr-2" alt="logo savoir-être">Savoir-être</h6>
+              <h6><img src="./css/teamwork.png" class="align-self-center mr-2" alt="logo savoir-être">Savoir-être</h6>
               <div class="row">
                 <div>
                   <p>Ecoute active</p>
@@ -286,11 +309,11 @@ $messages = $stmt->fetchAll();
             </section>
 
             <section class="border">
-              <h6><img src="../portfolio/css/psychology-symbol.png" class="align-self-center mr-2" alt="logo psy">Compétences en psychologie</h6>
-              <div class="imgBrain"><img src="../portfolio/css/intelligence.png" class="align-self-center mr-2" alt="logo étude du cerveau">Fonctionnement du cerveau, sa structure anatomique, et ses dysfonctionnements</div>
-              <div><img src="../portfolio/css/sd-card.png" class="align-self-center mr-2" alt="logo mémoire">Connaissances des différentes mémoires, leur fonctionnement et leurs dysfonctionnements</div>
-              <div class="imgSocial"><img src="../portfolio/css/crm.png" class="align-self-center mr-2" alt="logo social">Fonctionnement d'un groupe et ses interactions sociales</div>
-              <div><img src="../portfolio/css/handicap.png" class="align-self-center mr-2" alt="logo social">Connaissances des différents types de handicaps et leurs troubles associés</div>
+              <h6><img src="./css/psychology-symbol.png" class="align-self-center mr-2" alt="logo psy">Compétences en psychologie</h6>
+              <div class="imgBrain"><img src="./css/intelligence.png" class="align-self-center mr-2" alt="logo étude du cerveau">Fonctionnement du cerveau, sa structure anatomique, et ses dysfonctionnements</div>
+              <div><img src="./css/sd-card.png" class="align-self-center mr-2" alt="logo mémoire">Connaissances des différentes mémoires, leur fonctionnement et leurs dysfonctionnements</div>
+              <div class="imgSocial"><img src="./css/crm.png" class="align-self-center mr-2" alt="logo social">Fonctionnement d'un groupe et ses interactions sociales</div>
+              <div><img src="./css/handicap.png" class="align-self-center mr-2" alt="logo social">Connaissances des différents types de handicaps et leurs troubles associés</div>
             </section>
 
           </div>
@@ -393,7 +416,7 @@ $messages = $stmt->fetchAll();
     <div class="row">
       <div class="col-12">
         <div class="recommandationPro">
-          <h4>Recommandations professionnelles <img src="../portfolio/css/like.png" class="align-self-center" alt="logo like"></h4>
+          <h4>Recommandations professionnelles <img src="./css/like.png" class="align-self-center" alt="logo like"></h4>
 
           <div class="row">
             <div class="affichageMessage col-lg-6 col-md-9 mt-5">
@@ -429,7 +452,7 @@ $messages = $stmt->fetchAll();
       <div class="col-12 offset-md-1 col-md-6 formContact">
         <h4>Contact</h4>
 
-        <form method="post" action="mail.php">
+        <form method="post" action="#">
           <div class="form-group">
             <label for="nom">Nom</label>
             <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom" maxlength="100" minlength="3" size="30" required>
@@ -462,6 +485,11 @@ $messages = $stmt->fetchAll();
             }
           }
 
+          //affiche un message de confirmation si le formulaire est valide
+          if (!empty($_POST) && empty($errors)) {
+            echo ("Merci de votre message !");
+        }
+
           ?>
 
         </form>
@@ -479,7 +507,7 @@ $messages = $stmt->fetchAll();
       </div>
 
       <div class="col-12 col-md-4">
-        <a href="https://www.linkedin.com/in/lise-ravaud-dev-web" target="_blank"><img src="../portfolio/css/iconeLK.png" class="icone" alt="Logo site Linkedin"></a>
+        <a href="https://www.linkedin.com/in/lise-ravaud-dev-web" target="_blank"><img src="./css/iconeLK.png" class="icone" alt="Logo site Linkedin"></a>
       </div>
       <a class="btn btn-light btn-sm" href="#haut" role="button">Retour en haut du site</a>
     </div>

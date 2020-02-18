@@ -15,6 +15,26 @@ if (!empty($_POST)) {
     $entreprise = strip_tags($_POST['entreprise']);
     $message = strip_tags($_POST['message']);
 
+    $EmailTo = "xxxxx.xxxx@xxxx.fr";
+    $Subject = "PORTFOLIO RECOMMANDATION : ";
+    $header = "From:" . $email . "\r\n";
+    $header .= 'X-Mailer: PHP/' . phpversion();
+    $Body = "Nom : ";
+    $Body .= $nom;
+    $Body .= "\n";
+    $Body .= "Prénom : ";
+    $Body .= $prenom;
+    $Body .= "\n";
+    $Body .= "Métier : ";
+    $Body .= $metier;
+    $Body .= "\n";
+    $Body .= "Entreprise : ";
+    $Body .= $entreprise;
+    $Body .= "\n";
+    $Body .= "Message : ";
+    $Body .= $message;
+    $Body .= "\n";
+
     //tableau qui stocke nos éventuels messages d'erreur
     $errors = [];
 
@@ -103,6 +123,7 @@ if (!empty($_POST)) {
             ":entreprise" => $entreprise,
             ":message" => $message,
         ]);
+        $success = mail($EmailTo, $Subject, $Body);
     }
 }
 ?>
@@ -117,9 +138,9 @@ if (!empty($_POST)) {
     <meta name="description" content="Développeuse web spécialisée en front-end et UX design.">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Kurale|Great+Vibes|Parisienne|Sorts+Mill+Goudy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../portfolio/css/mdb.css">
-    <link rel="stylesheet" href="../portfolio/css/index.css">
-    <link rel="shortcut icon" href="../portfolio/css/lotus_flower.webp">
+    <link rel="stylesheet" href="./css/mdb.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="shortcut icon" href="./css/lotus_flower.webp">
 
     <title>Lise Ravaud | Développeuse web</title>
 </head>

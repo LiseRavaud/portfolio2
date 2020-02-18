@@ -399,3 +399,15 @@ footer a{
     margin-bottom: 2em;
     font-family: 'Kurale', serif;
 }
+
+/*------------------- PAGE 404 -------------------*/
+.error404{
+    margin-top: 6em;
+    display: inline-grid;
+    justify-content: space-evenly;
+}
+
+.error404 h2{
+    font-size: 2em;
+    font-variant: small-caps;
+}
