@@ -158,7 +158,7 @@ $messages = $stmt->fetchAll();
 
 <body>
 
-  <!-------------------- MENU DE NAVIGATION -------------------->
+  <!-- MENU DE NAVIGATION -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="#haut">Lise Ravaud | Développeuse Web</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -186,7 +186,7 @@ $messages = $stmt->fetchAll();
     </div>
   </nav>
 
-  <!-------------------- HEADER -------------------->
+  <!-- HEADER -->
   <header class="container-fluid" id="haut">
 
     <div class="row">
@@ -203,7 +203,7 @@ $messages = $stmt->fetchAll();
     </div>
   </header>
 
-  <!-------------------- PARCOURS -------------------->
+  <!-- PARCOURS -->
   <div class="container" id="parComp">
     <div class="row">
       <div class="col-12 col-md-6 mt-3">
@@ -273,7 +273,7 @@ $messages = $stmt->fetchAll();
         </div>
       </div>
 
-      <!-------------------- COMPETENCES -------------------->
+      <!-- COMPETENCES -->
       <div class="col-12 col-md-6 comp mt-3">
         <div class="media">
           <div class="media-body">
@@ -323,7 +323,7 @@ $messages = $stmt->fetchAll();
   </div>
 
 
-  <!-------------------- CREATIONS -------------------->
+  <!-- CREATIONS -->
   <div class="container" id="creations">
     <div class="row">
       <div class="col-12 mask">
@@ -411,7 +411,7 @@ $messages = $stmt->fetchAll();
     </div>
   </div>
 
-  <!-------------------- RECOMMANDATIONS -------------------->
+  <!-- RECOMMANDATIONS -->
   <div class="container" id="recommandations">
     <div class="row">
       <div class="col-12">
@@ -423,10 +423,10 @@ $messages = $stmt->fetchAll();
               
               <?php
               foreach ($messages as $message) {
-                echo '<article>';
+                echo '<div>';
                 echo '<u>' .'Le ' .$message['jour'] . '/' . $message['mois'] . '/' . $message['annee'] . '</u>' .'<br>';
                 echo $message['prenom'] . ' ' . $message['nom'] . '<br>' . $message['metier'] . " de l'entreprise " . $message['entreprise'] . '<br>' . '"' . $message['message'] . '"' . '<hr>';
-                echo '</article>';
+                echo '</div>';
               }
               ?>
 
@@ -446,13 +446,13 @@ $messages = $stmt->fetchAll();
     </div>
   </div>
 
-  <!-------------------- CONTACT -------------------->
+  <!-- CONTACT -->
   <div class="container-fluid" id="contact">
     <div class="row">
       <div class="col-12 offset-md-1 col-md-6 formContact">
         <h4>Contact</h4>
 
-        <form method="post" action="#">
+        <form method="post" action="#contact">
           <div class="form-group">
             <label for="nom">Nom</label>
             <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom" maxlength="100" minlength="3" size="30" required>
@@ -464,7 +464,7 @@ $messages = $stmt->fetchAll();
           <div class="form-group">
             <label for="email">E-mail</label>
             <input type="email" class="form-control" name="email" id="email" aria-describedby="email" placeholder="Votre e-mail" maxlength="191" minlength="10" size="30" required>
-            <small id="email" class="form-text text-muted">Votre adresse e-mail restera confidentielle.</small>
+            <small class="form-text text-muted">Votre adresse e-mail restera confidentielle.</small>
           </div>
           <div class="form-group">
             <label for="sujet">Sujet</label>
@@ -472,7 +472,7 @@ $messages = $stmt->fetchAll();
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea type="text" class="form-control" name="message" id="message" rows="3" placeholder="Veuillez entrer votre message" maxlength="1000" minlength="15" size="50" required></textarea>
+            <textarea class="form-control" name="message" id="message" rows="3" placeholder="Veuillez entrer votre message" maxlength="1000" minlength="15" required></textarea>
           </div>
 
           <button type="submit" class="btn btn-indigo">Envoyer</button>
@@ -498,7 +498,7 @@ $messages = $stmt->fetchAll();
     </div>
   </div>
 
-  <!-------------------- FOOTER -------------------->
+  <!-- FOOTER -->
   <footer class="container-fluid">
     <div class="row">
       <div class="col-12 col-md-4">
@@ -513,7 +513,7 @@ $messages = $stmt->fetchAll();
     </div>
   </footer>
 
-  <!-------------------- BANDEAU MENTIONS LEGALES -------------------->
+  <!-- BANDEAU MENTIONS LEGALES -->
   <div class="container-fluid">
     <div class="row mentionL">
       <div class="col-12 offset-md-2 col-md-6">

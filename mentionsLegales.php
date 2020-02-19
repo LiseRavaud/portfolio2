@@ -15,7 +15,7 @@
 
 <body id="haut">
 
-<!-------------------- MENU DE NAVIGATION -------------------->
+<!-- MENU DE NAVIGATION -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <a class="navbar-brand" href="accueil.php#haut">Lise Ravaud | Développeuse Web</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
@@ -31,13 +31,13 @@
     </div>
 </nav>
 
-<!-------------------- CONTENU DE LA PAGE -------------------->
+<!-- CONTENU DE LA PAGE -->
 <div class="pageMention" id="ml">
     <div class="row">
     <div class="col-12 offset-md-3 col-md-6 formRecom">
     <h4>Présentation du site</h4>
     <p>En vertu de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique, 
-    il est précisé aux utilisateurs du site www.lise-ravaud.fr l'identité des différents intervenants dans le cadre de sa réalisation et 
+    il est précisé aux utilisateurs du site lise-ravaud.fr l'identité des différents intervenants dans le cadre de sa réalisation et 
     de son suivi :</p>
 
     <p>Propriétaire et créateur :<br>
@@ -47,7 +47,7 @@
     OVH</p>
 
     <h4>Conditions générales d’utilisation du site</h4>
-    <p>L’utilisation du site www.lise-ravaud.fr implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites.
+    <p>L’utilisation du site lise-ravaud.fr implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites.
     Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment.</p>
 
     <p>Ce site est accessible à tout moment. Une interruption pour raison de maintenance technique peut être toutefois décidée par Lise Ravaud.</p>

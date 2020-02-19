@@ -147,7 +147,7 @@ if (!empty($_POST)) {
 
 <body id="haut">
 
-    <!-------------------- MENU DE NAVIGATION -------------------->
+    <!-- MENU DE NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="accueil.php#haut">Lise Ravaud | Développeuse Web</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -164,7 +164,7 @@ if (!empty($_POST)) {
     </nav>
 
 
-    <!-------------------- FORMULAIRE DE RECOMMANDATIONS -------------------->
+    <!-- FORMULAIRE DE RECOMMANDATIONS -->
     <div class="container-fluid recom">
         <div class="row">
             <div class="col-12 offset-md-2 col-md-6 formRecom">
@@ -191,7 +191,7 @@ if (!empty($_POST)) {
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea type="text" class="form-control" name="message" id="message" rows="3" placeholder="Veuillez entrer votre message" maxlength="1000" minlength="10" size="50" required></textarea>
+                        <textarea class="form-control" name="message" id="message" rows="3" placeholder="Veuillez entrer votre message" maxlength="1000" minlength="10" required></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-indigo">Envoyer</button>
@@ -215,7 +215,7 @@ if (!empty($_POST)) {
         </div>
     </div>
 
-    <!-------------------- BANDEAU MENTIONS LEGALES -------------------->
+    <!-- BANDEAU MENTIONS LEGALES -->
     <div class="container-fluid">
         <div class="row mentionL">
             <div class="col-12 offset-md-2 col-md-6">
