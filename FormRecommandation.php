@@ -206,7 +206,7 @@ if (!empty($_POST)) {
 
                     //affiche un message de confirmation si le formulaire est valide
                     if (!empty($_POST) && empty($errors)) {
-                        echo ("Merci de votre message !");
+                        echo ("Merci pour votre recommandation !");
                     }
                     ?>
                     
